@@ -6,5 +6,5 @@ $db = getDB();
 $data = getData($db);
 
 echo '<pre>';
-var_dump($db);
+var_dump($data);
 echo '</pre>';
