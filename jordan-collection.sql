@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.5-10.6.5-MariaDB-1:10.6.5+maria~focal)
 # Database: jordan-collection
-# Generation Time: 2022-02-08 13:59:39 +0000
+# Generation Time: 2022-02-08 16:53:19 +0000
 # ************************************************************
 
 
@@ -29,7 +29,7 @@ CREATE TABLE `records` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `albumName` varchar(255) NOT NULL DEFAULT '',
   `artistName` varchar(255) NOT NULL DEFAULT '',
-  `genre` enum('alternative','blues','classical','comedy','country','disco','electronic','folk','funk','hip-hop','house','indie','jazz','metal','new wave','nu-soul','pop','psychedelic','punk','rock','r&b','reggae','soul','spoken word','techno','other') NOT NULL,
+  `genre` enum('alternative','blues','classical','comedy','country','disco','electronic','folk','funk','hip-hop','house','indie','jazz','metal','new-wave','nu-soul','pop','psychedelic','punk','rock','r&b','reggae','soul','spoken-word','techno','other') NOT NULL,
   `purchaseDate` date DEFAULT NULL,
   `albumImage` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
