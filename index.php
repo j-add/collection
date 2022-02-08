@@ -23,7 +23,7 @@ $data = getData($db);
 </head>
 <body>
 <nav>
-<h1>🎶 My Record Collection 🎶</h1>
+<h1>My Record Collection</h1>
 </nav>
 
 <div class="collectionContainer">
