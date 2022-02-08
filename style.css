@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -5,33 +12,45 @@
 
 html {
     font-size: 62.5%;
-    font-family: 'Work Sans',sans-serif;
+    font-family: 'Roboto',sans-serif;
     scroll-behavior: smooth;
 }
 
 body {
     background-color: #ECEFF1;
+    margin: 60px 0 0 0;
 }
 
 nav {
     background-color: #607D8B;
     color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     position: fixed;
     top: 0px;
     height: 60px;
     width: 100%;
+    -webkit-box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 .collectionContainer {
-    margin-top: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
-    gap: 30px 20px;
+    gap: 30px 25px;
     padding: 5%;
 }
 
@@ -41,21 +60,42 @@ nav {
     border-color: transparent;
     background-color: #F8F8F8;
     border-radius: 2rem;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.1);
 }
 
 .albumImg {
     text-align: center;
-    width: 360px;
-    height: 360px;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+}
+
+.albumName {
+    font-size: 2.4em;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.artistName {
+    padding-bottom: 35px;
+}
+
+.purchaseDate {
+    float: right;
 }
 
 .genre {
+    float: left;
     background-color: green;
     color: #fff;
     border-radius: 1.2rem;
     padding: 5px;
     font-size: 1.2rem;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
 }
 
 /* Genre colors */
