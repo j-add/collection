@@ -3,7 +3,7 @@
 require_once 'functions.php';
 
 $db = getDB();
-$data = getData($db);
+$records = getAllAlbums($db);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,7 @@ $data = getData($db);
 </nav>
 
 <section class="collectionContainer">
-<?php echo outputRecords($data);?>
+<?php echo outputRecords($records);?>
 </section>
 
 </body>
