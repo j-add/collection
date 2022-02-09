@@ -1,0 +1,179 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto',sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ECEFF1;
+    margin: 60px 0 0 0;
+}
+
+nav {
+    background-color: #607D8B;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    height: 60px;
+    width: 100%;
+    -webkit-box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.collectionContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 30px 25px;
+    padding: 5%;
+}
+
+.record {
+    padding: 20px;
+    width: 400px;
+    border-color: transparent;
+    background-color: #F8F8F8;
+    border-radius: 2rem;
+    -webkit-box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.1);
+}
+
+.albumImg {
+    text-align: center;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+}
+
+.albumName {
+    font-size: 2.4em;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.artistName {
+    padding-bottom: 35px;
+}
+
+.purchaseDate {
+    float: right;
+}
+
+.genre {
+    float: left;
+    background-color: green;
+    color: #fff;
+    border-radius: 1.2rem;
+    padding: 5px;
+    font-size: 1.2rem;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}
+
+/* Genre colors */
+.alternative {
+    background-color: #E57373;
+}
+.blues {
+    background-color: #64B5F6;
+}
+.classical {
+    background-color: #FFF176;
+}
+.comedy {
+    background-color: #A1887F;
+}
+.country {
+    background-color: #FF8A65;
+}
+.disco {
+    background-color: #F06292;
+}
+.electronic {
+    background-color: #4FC3F7;
+}
+.folk {
+    background-color: #90A4AE;
+}
+.funk {
+    background-color: #9575CD;
+}
+.hip-hop {
+    background-color: #4DB6AC;
+}
+.house {
+    background-color: #4DD0E1;
+}
+.indie {
+    background-color: #66BB6A;
+}
+.jazz {
+    background-color: #7986CB;
+}
+.metal {
+    background-color: #AED581;
+}
+.new-wave {
+    background-color: #DCE775
+}
+.nu-soul {
+    background-color: #9FA8DA;
+}
+.pop {
+    background-color: #5C6BC0;
+}
+.psychedelic {
+    background-color: #81C784;
+}
+.punk {
+    background-color: #FFAB91;
+}
+.rock {
+    background-color: #8D6E63;
+}
+.r&b {
+    background-color: #B39DDB;
+}
+.reggae {
+    background-color: #FFCC80;
+}
+.soul {
+    background-color: #90CAF9;
+}
+.spoken-word {
+    background-color: #B0BEC5;
+}
+.techno {
+    background-color: #80CBC4;
+}
+.other {
+    background-color: #81D4FA;
+}

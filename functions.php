@@ -33,15 +33,12 @@ function outputRecords(array $data): string {
     }
     foreach ($data as $record) {
         // If album cover is missing, insert placeholder image
-        $placeholderImage = './images/missingCover.png';
-        if ($record['albumImage'] == NULL || $record['albumImage'] == "") {
-            $record['albumImage'] = $placeholderImage;
-        }
+        $record['albumImage'] = $record['albumImage'] ?? './images/missingCover.png';
         // Output each data field
         $albumImage = '<div><img class="albumImg" src="' . $record['albumImage'] . '" alt="Album cover for ' . $record['albumName'] . ' by ' . $record['artistName'] . '" /></div>';
         $albumName = '<h1 class="albumName">' . $record['albumName'] . '</h1>';
         $artistName = '<h2 class="artistName">' . $record['artistName'] . '</h2>';
-        $genre = '<div><p class="genre ' . $record['genre'] . '">' . $record['genre'] . '</p></div>';
+        $genre = '<div><span class="genre ' . $record['genre'] . '">' . $record['genre'] . '</span></div>';
         //If purchaseDate is NULL do not include it in output string
         if ($record['purchaseDate'] != NULL) {
             $sqlDate = strtotime($record['purchaseDate']);
