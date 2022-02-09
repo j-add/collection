@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description: Opens a connection to the collection database
+ * Opens a connection to the collection database
  * @return object
  */
 function getDB(): object {
@@ -9,7 +9,7 @@ function getDB(): object {
 }
 
 /**
- * Description: Queries the database and returns selected data, as an array
+ * Queries the database and returns selected data as an array
  * @param object $db - The database that you wish to query
  * @return array - All matching data will be placed in an array
  */
@@ -21,7 +21,7 @@ function getData(object $db): array {
 }
 
 /**
- * Description: Takes an array of collection data and outputs each item to its own <div> container, with formatting
+ * Takes an array of collection data and outputs each item to its own <div> container, with formatting
  * @param array $data - Collection of data fetched from database
  * @return string
  */
