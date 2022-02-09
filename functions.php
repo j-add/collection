@@ -50,7 +50,7 @@ function outputRecords(array $records): string {
         if ($record['purchaseDate'] != NULL) {
             $sqlDate = strtotime($record['purchaseDate']);
             $formattedDate = date( 'd-m-Y', $sqlDate );
-            $result .= '<div><p class="purchaseDate">Purchased on: ' . $formattedDate . '</p></div>';
+            $result .= '<div><span class="purchaseDate">Purchased on: ' . $formattedDate . '</span></div>';
         }
         $result .= '</div>';
     }
