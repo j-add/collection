@@ -26,9 +26,9 @@ $data = getData($db);
 <h1>My Record Collection</h1>
 </nav>
 
-<div class="collectionContainer">
+<section class="collectionContainer">
 <?php echo outputRecords($data);?>
-</div>
+</section>
 
 </body>
 </html>
