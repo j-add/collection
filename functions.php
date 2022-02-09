@@ -41,20 +41,18 @@ function outputRecords(array $records): string {
         // If album cover is missing, insert placeholder image
         $checkedImage = $record['albumImage'] ?? './images/missingCover.png';
         // Output each data field
-        $albumImage = '<div><img class="albumImg" src="' . $checkedImage . '" alt="Album cover for ' . $record['albumName'] . ' by ' . $record['artistName'] . '" /></div>';
-        $albumName = '<h1 class="albumName">' . $record['albumName'] . '</h1>';
-        $artistName = '<h2 class="artistName">' . $record['artistName'] . '</h2>';
-        $genre = '<div><span class="genre ' . $record['genre'] . '">' . $record['genre'] . '</span></div>';
+        $result .= '<div class="record">';
+        $result .= '<div><img class="albumImg" src="' . $checkedImage . '" alt="Album cover for ' . $record['albumName'] . ' by ' . $record['artistName'] . '" /></div>';
+        $result .= '<h1 class="albumName">' . $record['albumName'] . '</h1>';
+        $result .= '<h2 class="artistName">' . $record['artistName'] . '</h2>';
+        $result .= '<div><span class="genre ' . $record['genre'] . '">' . $record['genre'] . '</span></div>';
         //If purchaseDate is NULL do not include it in output string
         if ($record['purchaseDate'] != NULL) {
             $sqlDate = strtotime($record['purchaseDate']);
             $formattedDate = date( 'd-m-Y', $sqlDate );
-            $purchaseDate = '<div><p class="purchaseDate">Purchased on: ' . $formattedDate . '</p></div>';
-            $result .= '<div class="record">' . $albumImage . $albumName . $artistName . $purchaseDate . $genre . '</div>';
-        } else {
-            //Output each record as a string, concatenated onto the previous record's output
-            $result .= '<div class="record">' . $albumImage . $albumName . $artistName . $genre . '</div>';
+            $result .= '<div><p class="purchaseDate">Purchased on: ' . $formattedDate . '</p></div>';
         }
+        $result .= '</div>';
     }
     return $result;
 }
