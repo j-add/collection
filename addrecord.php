@@ -84,5 +84,8 @@ $db = getDB();
         </div>
     </form>
 </section>
+<button type="submit" class="backBtn" formaction="index.php">
+    &#11013; Cancel
+</button>
 </body>
 </html>
