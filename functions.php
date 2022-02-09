@@ -14,11 +14,11 @@ function getDB(): PDO {
 /**
  * Queries the database and returns selected data as an array
  *
- * @param object $db - The database that you wish to query
+ * @param PDO $db - The database that you wish to query
  *
  * @return array - All matching data will be placed in an array
  */
-function getAllAlbums(object $db): array {
+function getAllAlbums(PDO $db): array {
     $query = $db->prepare('SELECT `albumName`, `artistName`, `genre`, `purchaseDate`, `albumImage` FROM `records`;');
     $query->execute();
     return $query->fetchAll();
