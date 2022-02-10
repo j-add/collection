@@ -72,3 +72,18 @@ function checkKeys(array $submittedData): bool {
         return false;
     }
 }
+
+/**
+ * Validates text input by checking that input string is within VAR_CHAR's 255 character limit
+ *
+ * @param string $inputString The input string
+ *
+ * @return bool Returns true if valid, else false
+ */
+function validateTextInput(string $inputString): bool {
+    if (strlen($inputString) > 0 && strlen($inputString) <= 255) {
+        return true;
+    } else {
+        return false;
+    }
+}
