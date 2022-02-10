@@ -96,10 +96,27 @@ function validateTextInput(string $inputString): bool {
  * @return bool Returns true if input is valid (matches value from list), else false
  */
 function validateGenre(string $genre): bool {
+    strtolower($genre);
     $validGenre = array('alternative','blues','classical','comedy','country','disco','electronic','folk','funk','hip-hop','house','indie','jazz','metal','new-wave','nu-soul','pop','psychedelic','punk','rock','r&b','reggae','soul','spoken-word','techno','other');
-    if ($validGenre['$genre']) {
+    if (in_array($genre, $validGenre)) {
         return true;
     } else {
         return false;
     }
+}
+
+/**
+ * Takes an input and checks that it is a valid date
+ *
+ * @param string $date Input date
+ *
+ * @param string $format The date string format
+ *
+ * @return bool Returns true if date is valid, else false
+ */
+function validatePurchaseDate(string $date, string $format = 'Y-m-d'): bool
+{
+    $d = DateTime::createFromFormat($format, $date);
+    // The Y ( 4 digits year ) returns TRUE for any integer with any number of digits so changing the comparison from == to === fixes the issue.
+    return $d && $d->format($format) === $date;
 }

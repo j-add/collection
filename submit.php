@@ -1,5 +1,11 @@
 <?php
+require_once 'functions.php';
 $newRecord = $_POST;
+
+echo '<pre>';
+var_dump($newRecord);
+echo '</pre>';
+
 
 if (checkKeys($newRecord)) {
     $albumName = filter_var($newRecord['albumName'], FILTER_SANITIZE_STRING);
@@ -7,15 +13,12 @@ if (checkKeys($newRecord)) {
     $genre = filter_var($newRecord['genre'], FILTER_SANITIZE_STRING);
     $purchaseDate = filter_var($newRecord['purchaseDate'], FILTER_SANITIZE_STRING);
     $albumImage = filter_var($newRecord['albumImage'], FILTER_SANITIZE_URL);
-    if (validateTextInput($albumName) && validateTextInput($artistName) && validateGenre($genre) && filter_var($albumImage, FILTER_VALIDATE_URL))
+    if (validateTextInput($albumName) &&
+        validateTextInput($artistName) &&
+        (validatePurchaseDate($purchaseDate) || $purchaseDate == '') &&
+        validateGenre($genre) &&
+        (filter_var($albumImage, FILTER_VALIDATE_URL) || $albumImage == '')) {
+        echo 'Success!';
+        }
 }
 
-
-header("Location: index.php");
-
-
-if (@getimagesize($albumImage)) {
-    return $albumImage;
-} else {
-    return './images/missingCover.png';
-}
