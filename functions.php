@@ -39,7 +39,11 @@ function outputRecords(array $records): string {
     }
     foreach ($records as $record) {
         // If album cover is missing, insert placeholder image
-        $checkedImage = $record['albumImage'] ?? './images/missingCover.png';
+        if ($record['albumImage'] == NULL || $record['albumImage'] == '') {
+            $checkedImage = './images/missingCover.png';
+        } else {
+            $checkedImage = $record['albumImage'];
+        }
         // Output each data field
         $result .= '<div class="record">';
         $result .= '<div><img class="albumImg" src="' . $checkedImage . '" alt="Album cover for ' . $record['albumName'] . ' by ' . $record['artistName'] . '" /></div>';
@@ -97,7 +101,7 @@ function validateTextInput(string $inputString): bool {
  */
 function validateGenre(string $genre): bool {
     strtolower($genre);
-    $validGenre = array('alternative','blues','classical','comedy','country','disco','electronic','folk','funk','hip-hop','house','indie','jazz','metal','new-wave','nu-soul','pop','psychedelic','punk','rock','r&b','reggae','soul','spoken-word','techno','other');
+    $validGenre = ['alternative','blues','classical','comedy','country','disco','electronic','folk','funk','hip-hop','house','indie','jazz','metal','new-wave','nu-soul','pop','psychedelic','punk','rock','r&b','reggae','soul','spoken-word','techno','other'];
     if (in_array($genre, $validGenre)) {
         return true;
     } else {
