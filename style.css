@@ -309,6 +309,8 @@ nav {
 
 .backBtn div {
     margin: 25px;
+    display: flex;
+    justify-content: center;
 }
 
 .backBtn:hover {
