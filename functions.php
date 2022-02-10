@@ -58,4 +58,64 @@ function outputRecords(array $records): string {
 }
 
 
+/**
+ * Checks data taken from user input against expected keys (required by database)
+ *
+ * @param array $submittedData $_POST data from form submission
+ *
+ * @return bool Returns true if data is valid, else returns false
+ */
+function checkKeys(array $submittedData): bool {
+    if (isset($submittedData['albumName']) && isset($submittedData['artistName']) && isset($submittedData['genre']) && isset($submittedData['purchaseDate']) && isset($submittedData['albumImage'])) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
+/**
+ * Validates text input by checking that input string is within VAR_CHAR's 255 character limit
+ *
+ * @param string $inputString The input string
+ *
+ * @return bool Returns true if valid, else false
+ */
+function validateTextInput(string $inputString): bool {
+    if (strlen($inputString) > 0 && strlen($inputString) <= 255) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * Validates input against pre-defined list of accepted 'genre' values
+ *
+ * @param string $genre User input value for genre
+ *
+ * @return bool Returns true if input is valid (matches value from list), else false
+ */
+function validateGenre(string $genre): bool {
+    strtolower($genre);
+    $validGenre = array('alternative','blues','classical','comedy','country','disco','electronic','folk','funk','hip-hop','house','indie','jazz','metal','new-wave','nu-soul','pop','psychedelic','punk','rock','r&b','reggae','soul','spoken-word','techno','other');
+    if (in_array($genre, $validGenre)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * Takes an input and checks that it is a valid date
+ *
+ * @param string $date Input date
+ *
+ * @param string $format The date string format
+ *
+ * @return bool Returns true if date is valid, else false
+ */
+function validatePurchaseDate(string $date, string $format = 'Y-m-d'): bool {
+    $d = DateTime::createFromFormat($format, $date);
+    // The Y ( 4 digits year ) returns TRUE for any integer with any number of digits so changing the comparison from == to === fixes the issue.
+    return $d && $d->format($format) === $date;
+}
