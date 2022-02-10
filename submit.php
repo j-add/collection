@@ -2,11 +2,6 @@
 require_once 'functions.php';
 $newRecord = $_POST;
 
-echo '<pre>';
-var_dump($newRecord);
-echo '</pre>';
-
-
 if (checkKeys($newRecord)) {
     $albumName = filter_var($newRecord['albumName'], FILTER_SANITIZE_STRING);
     $artistName = filter_var($newRecord['artistName'], FILTER_SANITIZE_STRING);

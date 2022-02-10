@@ -114,8 +114,7 @@ function validateGenre(string $genre): bool {
  *
  * @return bool Returns true if date is valid, else false
  */
-function validatePurchaseDate(string $date, string $format = 'Y-m-d'): bool
-{
+function validatePurchaseDate(string $date, string $format = 'Y-m-d'): bool {
     $d = DateTime::createFromFormat($format, $date);
     // The Y ( 4 digits year ) returns TRUE for any integer with any number of digits so changing the comparison from == to === fixes the issue.
     return $d && $d->format($format) === $date;
