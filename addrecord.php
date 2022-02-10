@@ -31,7 +31,7 @@ $db = getDB();
 </nav>
 
 <section class="addRecordsForm">
-    <form action="postRecord.php" method="post" class="sm-col-6">
+    <form action="submit.php" method="post" class="sm-col-6">
         <div class="form-group">
             <label for="albumName">Album Name</label>
             <input type="text" name="albumName" id="albumName" required class="input-control" />
@@ -46,7 +46,7 @@ $db = getDB();
         </div>
         <div class="form-group">
             <label for="genre">Genre</label>
-            <select name="genres" id="genres" class="input-control" >
+            <select name="genre" id="genre" class="input-control" >
                 <option value="alternative">Alternative</option>
                 <option value="blues">Blues</option>
                 <option value="classical">Classical</option>
@@ -84,8 +84,6 @@ $db = getDB();
         </div>
     </form>
 </section>
-<button type="submit" class="backBtn" formaction="index.php">
-    &#11013; Cancel
-</button>
+<a href="index.php" class="backBtn"><div>&#11013; Cancel</div></a>
 </body>
 </html>
