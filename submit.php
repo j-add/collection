@@ -10,10 +10,12 @@ if (checkKeys($newRecord)) {
     $albumImage = filter_var($newRecord['albumImage'], FILTER_SANITIZE_URL);
     if (validateTextInput($albumName) &&
         validateTextInput($artistName) &&
-        (validatePurchaseDate($purchaseDate) || $purchaseDate == '') &&
+        (($purchaseDate == NULL || validatePurchaseDate($purchaseDate))) &&
         validateGenre($genre) &&
-        (filter_var($albumImage, FILTER_VALIDATE_URL) || $albumImage == '')) {
-        echo 'Success!';
+        ($albumImage == '' || filter_var($albumImage, FILTER_VALIDATE_URL))) {
+            $db = getDB();
+            addRecordEntry($db, $albumName, $artistName, $genre, $purchaseDate, $albumImage);
         }
 }
 
+header('Location: index.php');
