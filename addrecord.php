@@ -79,7 +79,7 @@ $db = getDB();
             <input  type="submit" value="Add to collection" class="submitBtn" />
         </div>
     </form>
+    <a href="index.php" class="backBtn"><div>&#11013; Cancel</div></a>
 </section>
-<a href="index.php" class="backBtn"><div>&#11013; Cancel</div></a>
 </body>
 </html>

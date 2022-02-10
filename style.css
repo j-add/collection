@@ -215,11 +215,13 @@ nav {
     fill: #90A4AE;
 }
 
+
 .addRecordsForm {
     margin-top: 100px;
     display: flex;
     width: 100%;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -309,8 +311,6 @@ nav {
 
 .backBtn div {
     margin: 25px;
-    display: flex;
-    justify-content: center;
 }
 
 .backBtn:hover {
