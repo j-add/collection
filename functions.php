@@ -58,4 +58,17 @@ function outputRecords(array $records): string {
 }
 
 
-
+/**
+ * Checks data taken from user input against expected keys (required by database)
+ *
+ * @param array $submittedData $_POST data from form submission
+ *
+ * @return bool Returns true if data is valid, else returns false
+ */
+function checkKeys(array $submittedData): bool {
+    if (isset($submittedData['albumName']) && isset($submittedData['artistName']) && isset($submittedData['genre']) && isset($submittedData['purchaseDate']) && isset($submittedData['albumImage'])) {
+        return true;
+    } else {
+        return false;
+    }
+}
