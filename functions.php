@@ -87,3 +87,19 @@ function validateTextInput(string $inputString): bool {
         return false;
     }
 }
+
+/**
+ * Validates input against pre-defined list of accepted 'genre' values
+ *
+ * @param string $genre User input value for genre
+ *
+ * @return bool Returns true if input is valid (matches value from list), else false
+ */
+function validateGenre(string $genre): bool {
+    $validGenre = array('alternative','blues','classical','comedy','country','disco','electronic','folk','funk','hip-hop','house','indie','jazz','metal','new-wave','nu-soul','pop','psychedelic','punk','rock','r&b','reggae','soul','spoken-word','techno','other');
+    if ($validGenre['$genre']) {
+        return true;
+    } else {
+        return false;
+    }
+}
