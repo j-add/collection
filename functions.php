@@ -119,3 +119,34 @@ function validatePurchaseDate(string $date, string $format = 'Y-m-d'): bool {
     // The Y ( 4 digits year ) returns TRUE for any integer with any number of digits so changing the comparison from == to === fixes the issue.
     return $d && $d->format($format) === $date;
 }
+
+
+/**
+ * Adds a new record to the database, using user input values
+ *
+ * @param PDO $db The database to add to
+ *
+ * @param string $albumName The album name
+ *
+ * @param string $artistName The artist name
+ *
+ * @param string $genre The genre
+ *
+ * @param mixed $purchaseDate The purchase date (can be NULL or String)
+ *
+ * @param string $albumImage The album image URL
+ *
+ * @return void Does not return an output
+ */
+function addRecordEntry(PDO $db, string $albumName, string $artistName, string $genre, mixed $purchaseDate, string $albumImage): void {
+//create the sql query to run
+    $addRecord = $db->prepare("INSERT INTO `records` (`albumName`, `artistName`, `genre`, `purchaseDate`, `albumImage`) VALUES (:albumName, :artistName, :genre, :purchaseDate, :albumImage);");
+//bind parameters
+    $addRecord->bindParam(':albumName', $albumName);
+    $addRecord->bindParam(':artistName', $artistName);
+    $addRecord->bindParam(':genre', $genre);
+    $addRecord->bindParam(':purchaseDate', $purchaseDate);
+    $addRecord->bindParam(':albumImage', $albumImage);
+//run the query against the db
+    $addRecord->execute();
+}
