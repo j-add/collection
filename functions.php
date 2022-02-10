@@ -138,8 +138,11 @@ function validatePurchaseDate(string $date, string $format = 'Y-m-d'): bool {
  *
  * @return void Does not return an output
  */
-function addRecordEntry(PDO $db, string $albumName, string $artistName, string $genre, mixed $purchaseDate, string $albumImage): void {
-//create the sql query to run
+function addRecordEntry(PDO $db, string $albumName, string $artistName, string $genre, string $purchaseDate, string $albumImage): void {
+    if ($purchaseDate == '') {
+        $purchaseDate = NULL;
+    }
+    //create the sql query to run
     $addRecord = $db->prepare("INSERT INTO `records` (`albumName`, `artistName`, `genre`, `purchaseDate`, `albumImage`) VALUES (:albumName, :artistName, :genre, :purchaseDate, :albumImage);");
 //bind parameters
     $addRecord->bindParam(':albumName', $albumName);
