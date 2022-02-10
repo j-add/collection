@@ -28,7 +28,16 @@ $formattedRecords = outputRecords($records);
 </nav>
 
 <section class="collectionContainer">
-<?php echo $formattedRecords;?>
+    <?php echo $formattedRecords;?>
+    <div class="record">
+        <a href="#" class="addDataButton">
+            <div class="addBox">
+                <svg class="icon--plus" viewBox="-2.5 -2.5 10 10" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z" />
+                </svg>
+            </div>
+        </a>
+    </div>
 </section>
 
 </body>
