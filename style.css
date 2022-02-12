@@ -54,7 +54,7 @@ nav {
     -ms-flex-pack: center;
     justify-content: center;
     gap: 30px 25px;
-    padding: 5%;
+    padding: 40px;
 }
 
 .record {
@@ -63,9 +63,15 @@ nav {
     border-color: transparent;
     background-color: #F8F8F8;
     border-radius: 2rem;
-    -webkit-box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.1);
-    box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.1);
     overflow: scroll;
+    transition: box-shadow 0.25s;
+    transition-timing-function: ease-out;
+    box-shadow: 0px 6px 8px -3px rgba(0,0,0,0.25);
+}
+
+.record:hover {
+    transition: box-shadow 0.25s;
+    box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
 }
 
 .albumImg {
@@ -225,7 +231,6 @@ nav {
 
 
 .addRecordsForm {
-    margin-top: 100px;
     display: flex;
     width: 100%;
     align-items: center;
@@ -235,6 +240,7 @@ nav {
 
 .addRecordsForm form {
     display: flex;
+    margin-top: 100px;
     justify-content: center;
     flex-direction: column;
     width: 80%;
@@ -244,8 +250,18 @@ nav {
     border-color: transparent;
     background-color: #F8F8F8;
     border-radius: 2rem;
-    -webkit-box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.1);
-    box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.1);
+    box-shadow: 0px 6px 8px -3px rgba(0,0,0,0.25);
+    transition: box-shadow 0.25s;
+}
+
+.addRecordsForm form:focus-within {
+    transition: box-shadow 0.25s;
+    box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
+}
+
+.addRecordsForm form:hover {
+    transition: box-shadow 0.25s;
+    box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
 }
 
 /* form specific formatting */
@@ -274,7 +290,6 @@ nav {
     padding: 10px;
     display: block;
     margin-bottom: 10px;
-    margin-right: 8px;
     margin-top: -4px;
     border-radius: 0.2rem;
     font-size: 1.4rem;
@@ -335,8 +350,8 @@ nav {
     }
 
     nav {
-        background-color: #212121;
-        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+        background-color: #263238;
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
     }
 
     img {
@@ -345,10 +360,29 @@ nav {
 
     .record {
         background-color: rgba(255,255,255,0.05);
+        transition: background-color 0.2s;
+    }
+
+    .record:hover {
+        background-color: rgba(255,255,255,0.08);
+        transition: background-color 0.2s;
     }
 
     .addRecordsForm form {
         background-color: rgba(255,255,255,0.05);
+        transition: box-shadow 0.2s, background-color 0.2s;
+    }
+
+    .addRecordsForm form:focus-within {
+        background-color: rgba(255,255,255,0.08);
+        transition: box-shadow 0.2s, background-color 0.2s;
+        box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
+    }
+
+    .addRecordsForm form:hover {
+        background-color: rgba(255,255,255,0.08);
+        transition: box-shadow 0.2s, background-color 0.2s;
+        box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
     }
 
     .genre {
@@ -368,16 +402,23 @@ nav {
     }
 
     .submitBtn {
-        background-color: #607D8B;
+        background-color: #546E7A;
     }
 
     .submitBtn:hover {
-        background-color: #546E7A;
+        background-color: #607D8B;
     }
 
     .input-control {
         color: #000;
-        background-color: rgba(255,255,255,0.7);
+        background-color: rgba(255,255,255,0.6);
         border-color: transparent;
+        transition: background-color 0.2s;
+    }
+
+
+    .input-control:focus-within {
+        background-color: rgba(255,255,255,0.7);
+        transition: background-color 0.2s;
     }
 }
