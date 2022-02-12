@@ -68,6 +68,36 @@ class FunctionsTest extends TestCase {
         checkKeys($inputA);
     }
 
+    //sanitizeImageURL Tests
+
+    //Success test
+    public function testSuccessSanitizeImageURL()
+    {
+        $expected = 'https://upload.wikimedia.org/wikipedia/en/c/c6/Human_Music.jpg';
+        $inputA = 'https://upload.wikimedia.org/wikipedia/en/c/c6/Human_Music.jpg';
+        $case = sanitizeImageURL($inputA);
+        $this->assertEquals($expected, $case);
+    }
+
+    //Failure test
+    public function testFailureSanitizeImageURL()
+    {
+        $expected = '';
+        $inputA = 'https://en.wikipedia.org/wiki/Human_Music';
+        $case = sanitizeImageURL($inputA);
+        $this->assertEquals($expected, $case);
+    }
+
+
+    //Malformed test
+    public function testMalformedSanitizeImageURL()
+    {
+        $inputA = ['https://en.wikipedia.org/wiki/Human_Music'];
+        $this->expectException(TypeError::class);
+        sanitizeImageURL($inputA);
+    }
+
+
     //validateTextInput Tests
 
     //Success test
