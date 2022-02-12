@@ -343,9 +343,9 @@ nav {
 }
 
 .requiredField:after {
-    content:" *";
+    content: " *";
     color: red;
-
+}
 
 @media (prefers-color-scheme: dark) {
     body {
@@ -424,5 +424,16 @@ nav {
     .input-control:focus-within {
         background-color: rgba(255,255,255,0.7);
         transition: background-color 0.2s;
+    }
+
+    .requiredField:after {
+        content: " *";
+        color: #F5F5F5;
+        transition: color 0.3s;
+    }
+
+    .form-group:focus-within .requiredField:after {
+        color: #EF9A9A;
+        transition: color 0.3s;
     }
 }
