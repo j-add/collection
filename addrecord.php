@@ -29,11 +29,11 @@ $db = getDB();
 <section class="addRecordsForm">
     <form action="submit.php" method="post" class="sm-col-6">
         <div class="form-group">
-            <label for="albumName">Album Name</label>
+            <label for="albumName" class="requiredField" title="Required">Album Name</label>
             <input type="text" name="albumName" id="albumName" required class="input-control" />
         </div>
         <div class="form-group">
-            <label for="artistName">Artist Name</label>
+            <label for="artistName" class="requiredField" title="Required">Artist Name</label>
             <input type="text" name="artistName" id="artistName" required class="input-control" />
         </div>
         <div class="form-group">
@@ -41,7 +41,7 @@ $db = getDB();
             <input type="date" name="purchaseDate" id="purchaseDate" class="input-control" />
         </div>
         <div class="form-group">
-            <label for="genre">Genre</label>
+            <label for="genre" class="requiredField" title="Required">Genre</label>
             <select name="genre" id="genre" class="input-control" >
                 <option value="alternative">Alternative</option>
                 <option value="blues">Blues</option>

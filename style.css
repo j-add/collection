@@ -317,3 +317,8 @@ nav {
     color: darkred;
     cursor: pointer;
 }
+
+.requiredField:after {
+    content:" *";
+    color: red;
+}
