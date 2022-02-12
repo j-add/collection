@@ -11,6 +11,7 @@ $formattedRecords = outputRecords($records);
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light">
     <title>My Record Collection</title>
     <link href="normalize.css" type="text/css" rel="stylesheet" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -35,6 +36,7 @@ $formattedRecords = outputRecords($records);
                 <svg class="icon--plus" viewBox="-2.5 -2.5 10 10" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z" />
                 </svg>
+                <h1>Add to collection</h1>
             </div>
         </a>
     </div>

@@ -40,6 +40,7 @@ nav {
     padding: 10px 7.5%;
     -webkit-box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    z-index: 99;
 }
 
 .collectionContainer {
@@ -53,7 +54,7 @@ nav {
     -ms-flex-pack: center;
     justify-content: center;
     gap: 30px 25px;
-    padding: 5%;
+    padding: 40px;
 }
 
 .record {
@@ -62,9 +63,15 @@ nav {
     border-color: transparent;
     background-color: #F8F8F8;
     border-radius: 2rem;
-    -webkit-box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.1);
-    box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.1);
     overflow: scroll;
+    transition: box-shadow 0.25s;
+    transition-timing-function: ease-out;
+    box-shadow: 0px 6px 8px -3px rgba(0,0,0,0.25);
+}
+
+.record:hover {
+    transition: box-shadow 0.25s;
+    box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
 }
 
 .albumImg {
@@ -101,6 +108,7 @@ nav {
 .purchaseDate {
     float: right;
     margin-top: 7px;
+    font-size: 1.2rem;
 }
 
 .genre {
@@ -118,7 +126,7 @@ nav {
 
 /* Genre colors */
 .alternative {
-    background-color: #E57373;
+    background-color: #880E4F;
 }
 .blues {
     background-color: #64B5F6;
@@ -136,7 +144,7 @@ nav {
     background-color: #F06292;
 }
 .electronic {
-    background-color: #4FC3F7;
+    background-color: #33691E;
 }
 .folk {
     background-color: #90A4AE;
@@ -145,25 +153,25 @@ nav {
     background-color: #9575CD;
 }
 .hip-hop {
-    background-color: #4DB6AC;
+    background-color: #004D40;
 }
 .house {
     background-color: #4DD0E1;
 }
 .indie {
-    background-color: #66BB6A;
+    background-color: #1B5E20;
 }
 .jazz {
-    background-color: #7986CB;
+    background-color: #311B92;
 }
 .metal {
     background-color: #AED581;
 }
 .new-wave {
-    background-color: #DCE775
+    background-color: #545D0E;
 }
 .nu-soul {
-    background-color: #9FA8DA;
+    background-color: #006064;
 }
 .pop {
     background-color: #5C6BC0;
@@ -172,7 +180,7 @@ nav {
     background-color: #81C784;
 }
 .punk {
-    background-color: #FFAB91;
+    background-color: #A82700;
 }
 .rock {
     background-color: #8D6E63;
@@ -184,40 +192,45 @@ nav {
     background-color: #FFCC80;
 }
 .soul {
-    background-color: #90CAF9;
+    background-color: #01579B;
 }
 .spoken-word {
     background-color: #B0BEC5;
 }
 .techno {
-    background-color: #80CBC4;
+    background-color: #28625E;
 }
 .other {
     background-color: #81D4FA;
+}
+
+.addDataButton {
+    opacity: 0.7;
 }
 
 .addBox {
     display: flex;
     width: 100%;
     height: 100%;
-    border: 10px dashed #CFD8DC;
-}
-
-.addDataButton:hover .addBox{
     border: 10px dashed #90A4AE;
 }
 
-.icon--plus > path {
-    fill: #CFD8DC;
+.addBox h1 {
+    visibility: hidden;
+    position: absolute;
+    margin: 0 auto;
 }
 
-.addDataButton:hover .icon--plus > path {
+.icon--plus > path {
     fill: #90A4AE;
+}
+
+.addDataButton:hover {
+    opacity: 1;
 }
 
 
 .addRecordsForm {
-    margin-top: 100px;
     display: flex;
     width: 100%;
     align-items: center;
@@ -227,6 +240,7 @@ nav {
 
 .addRecordsForm form {
     display: flex;
+    margin-top: 100px;
     justify-content: center;
     flex-direction: column;
     width: 80%;
@@ -236,8 +250,18 @@ nav {
     border-color: transparent;
     background-color: #F8F8F8;
     border-radius: 2rem;
-    -webkit-box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.1);
-    box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.1);
+    box-shadow: 0px 6px 8px -3px rgba(0,0,0,0.25);
+    transition: box-shadow 0.25s;
+}
+
+.addRecordsForm form:focus-within {
+    transition: box-shadow 0.25s;
+    box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
+}
+
+.addRecordsForm form:hover {
+    transition: box-shadow 0.25s;
+    box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
 }
 
 /* form specific formatting */
@@ -266,7 +290,6 @@ nav {
     padding: 10px;
     display: block;
     margin-bottom: 10px;
-    margin-right: 8px;
     margin-top: -4px;
     border-radius: 0.2rem;
     font-size: 1.4rem;
@@ -321,4 +344,84 @@ nav {
 .requiredField:after {
     content:" *";
     color: red;
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #F5F5F5;
+    }
+
+    nav {
+        background-color: #263238;
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
+    }
+
+    img {
+        filter: brightness(.8) contrast(1.2);
+    }
+
+    .record {
+        background-color: rgba(255,255,255,0.05);
+        transition: background-color 0.2s;
+    }
+
+    .record:hover {
+        background-color: rgba(255,255,255,0.08);
+        transition: background-color 0.2s;
+    }
+
+    .addRecordsForm form {
+        background-color: rgba(255,255,255,0.05);
+        transition: box-shadow 0.2s, background-color 0.2s;
+    }
+
+    .addRecordsForm form:focus-within {
+        background-color: rgba(255,255,255,0.08);
+        transition: box-shadow 0.2s, background-color 0.2s;
+        box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
+    }
+
+    .addRecordsForm form:hover {
+        background-color: rgba(255,255,255,0.08);
+        transition: box-shadow 0.2s, background-color 0.2s;
+        box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
+    }
+
+    .genre {
+        color: #F5F5F5;
+    }
+
+    .albumName {
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .backBtn {
+        color: #EEEEEE;
+    }
+
+    .backBtn:hover {
+        color: #E0E0E0;
+    }
+
+    .submitBtn {
+        background-color: #546E7A;
+    }
+
+    .submitBtn:hover {
+        background-color: #607D8B;
+    }
+
+    .input-control {
+        color: #000;
+        background-color: rgba(255,255,255,0.6);
+        border-color: transparent;
+        transition: background-color 0.2s;
+    }
+
+
+    .input-control:focus-within {
+        background-color: rgba(255,255,255,0.7);
+        transition: background-color 0.2s;
+    }
 }
