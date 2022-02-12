@@ -40,6 +40,7 @@ nav {
     padding: 10px 7.5%;
     -webkit-box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    z-index: 99;
 }
 
 .collectionContainer {
@@ -101,6 +102,7 @@ nav {
 .purchaseDate {
     float: right;
     margin-top: 7px;
+    font-size: 1.2rem;
 }
 
 .genre {
@@ -110,6 +112,7 @@ nav {
     border-radius: 1.2rem;
     padding: 5px;
     font-size: 1.2rem;
+    font-weight: 500;
     -webkit-user-select: none;  /* Chrome all / Safari all */
     -moz-user-select: none;     /* Firefox all */
     -ms-user-select: none;      /* IE 10+ */
@@ -118,7 +121,7 @@ nav {
 
 /* Genre colors */
 .alternative {
-    background-color: #E57373;
+    background-color: #880E4F;
 }
 .blues {
     background-color: #64B5F6;
@@ -136,7 +139,7 @@ nav {
     background-color: #F06292;
 }
 .electronic {
-    background-color: #4FC3F7;
+    background-color: #33691E;
 }
 .folk {
     background-color: #90A4AE;
@@ -145,25 +148,25 @@ nav {
     background-color: #9575CD;
 }
 .hip-hop {
-    background-color: #4DB6AC;
+    background-color: #004D40;
 }
 .house {
     background-color: #4DD0E1;
 }
 .indie {
-    background-color: #66BB6A;
+    background-color: #1B5E20;
 }
 .jazz {
-    background-color: #7986CB;
+    background-color: #311B92;
 }
 .metal {
     background-color: #AED581;
 }
 .new-wave {
-    background-color: #DCE775
+    background-color: #545D0E;
 }
 .nu-soul {
-    background-color: #9FA8DA;
+    background-color: #006064;
 }
 .pop {
     background-color: #5C6BC0;
@@ -172,7 +175,7 @@ nav {
     background-color: #81C784;
 }
 .punk {
-    background-color: #FFAB91;
+    background-color: #A82700;
 }
 .rock {
     background-color: #8D6E63;
@@ -184,13 +187,13 @@ nav {
     background-color: #FFCC80;
 }
 .soul {
-    background-color: #90CAF9;
+    background-color: #01579B;
 }
 .spoken-word {
     background-color: #B0BEC5;
 }
 .techno {
-    background-color: #80CBC4;
+    background-color: #28625E;
 }
 .other {
     background-color: #81D4FA;
@@ -201,6 +204,12 @@ nav {
     width: 100%;
     height: 100%;
     border: 10px dashed #CFD8DC;
+}
+
+.addBox h1 {
+    visibility: hidden;
+    position: absolute;
+    margin: 0 auto;
 }
 
 .addDataButton:hover .addBox{
@@ -316,4 +325,58 @@ nav {
 .backBtn:hover {
     color: darkred;
     cursor: pointer;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #263238;
+        color: #F5F5F5;
+    }
+
+    nav {
+        background-color: #37474F;
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+    }
+
+    img {
+        filter: brightness(.8) contrast(1.2);
+    }
+
+    .record {
+        background-color: #424242;
+    }
+
+    .addRecordsForm form {
+        background-color: #424242;
+    }
+
+    .genre {
+        color: #F5F5F5;
+    }
+
+    .albumName {
+        border-bottom: 1px solid #9E9E9E;
+    }
+
+    .backBtn {
+        color: #EEEEEE;
+    }
+
+    .backBtn:hover {
+        color: #E0E0E0;
+    }
+
+    .submitBtn {
+        background-color: #607D8B;
+    }
+
+    .submitBtn:hover {
+        background-color: #546E7A;
+    }
+
+    .input-control {
+        background-color: gainsboro;
+    }
 }

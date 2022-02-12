@@ -10,6 +10,7 @@ $db = getDB();
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light">
     <title>Add a record | My Record Collection</title>
     <link href="normalize.css" type="text/css" rel="stylesheet" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
