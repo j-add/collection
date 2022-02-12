@@ -78,6 +78,22 @@ function checkKeys(array $submittedData): bool {
 }
 
 /**
+ * Sanitises URL and checks that it directs to an image file
+ *
+ * @param string $url Image URL
+ *
+ * @return string Returns the sanitised URL, if it directs to a valid image, else returns an empty string
+ */
+function sanitizeImageURL(string $url): string {
+    $url = filter_var($url, FILTER_SANITIZE_URL);
+    if (getimagesize($url)) {
+        return $url;
+    } else {
+        return '';
+    }
+}
+
+/**
  * Validates text input by checking that input string is within VAR_CHAR's 255 character limit
  *
  * @param string $inputString The input string
@@ -146,6 +162,9 @@ function addRecordEntry(PDO $db, string $albumName, string $artistName, string $
     if ($purchaseDate == '') {
         $purchaseDate = NULL;
     }
+    if ($albumImage == '') {
+        $albumImage = NULL;
+    }
     //create the sql query to run
     $addRecord = $db->prepare("INSERT INTO `records` (`albumName`, `artistName`, `genre`, `purchaseDate`, `albumImage`) VALUES (:albumName, :artistName, :genre, :purchaseDate, :albumImage);");
 //bind parameters
@@ -157,3 +176,4 @@ function addRecordEntry(PDO $db, string $albumName, string $artistName, string $
 //run the query against the db
     $addRecord->execute();
 }
+
