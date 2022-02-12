@@ -3,6 +3,7 @@
 require_once 'functions.php';
 
 $db = getDB();
+$dateToday = date("Y-m-d");
 
 ?>
 <!DOCTYPE html>
@@ -38,7 +39,7 @@ $db = getDB();
         </div>
         <div class="form-group">
             <label for="purchaseDate">Purchase Date</label>
-            <input type="date" name="purchaseDate" id="purchaseDate" class="input-control" />
+            <input type="date" name="purchaseDate" id="purchaseDate" class="input-control" max="<?php echo $dateToday; ?>" min="1948-01-01"/>
         </div>
         <div class="form-group">
             <label for="genre" class="requiredField" title="Required">Genre</label>
