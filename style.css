@@ -207,6 +207,7 @@ nav {
 
 .addDataButton {
     opacity: 0.7;
+    transition: opacity 0.15s ease-out;
 }
 
 .addBox {
@@ -228,6 +229,7 @@ nav {
 
 .addDataButton:hover {
     opacity: 1;
+    transition: opacity 0.15s ease-in;
 }
 
 
@@ -433,7 +435,7 @@ nav {
     }
 
     .form-group:focus-within .requiredField:after {
-        color: #EF9A9A;
+        color: #EF5350;
         transition: color 0.3s;
     }
 }
