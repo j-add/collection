@@ -59,24 +59,66 @@ nav {
 }
 
 .record {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     padding: 20px;
     width: 400px;
     border-color: transparent;
     background-color: #F8F8F8;
     border-radius: 2rem;
     overflow: scroll;
+    -webkit-transition: -webkit-box-shadow 0.25s;
+    transition: -webkit-box-shadow 0.25s;
+    -o-transition: box-shadow 0.25s;
     transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+    -webkit-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
+    -webkit-box-shadow: 0px 6px 8px -3px rgba(0,0,0,0.25);
     box-shadow: 0px 6px 8px -3px rgba(0,0,0,0.25);
 }
 
+.cardImage {
+    width: 100%;
+    border-radius: 0.3rem;
+}
+
+.cardText {
+    width: 100%;
+}
+
+.cardTags {
+    width: 100%;
+    justify-self: flex-end;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
 .record:hover {
+    -webkit-transition: -webkit-box-shadow 0.25s;
+    transition: -webkit-box-shadow 0.25s;
+    -o-transition: box-shadow 0.25s;
     transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+    -webkit-box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
     box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
 }
 
 .albumImg {
-    text-align: center;
+    border-radius: 0.2rem;
     aspect-ratio: 1 / 1;
     width: 100%;
 }
@@ -91,7 +133,7 @@ nav {
     /* Non standard for WebKit */
     word-break: break-word;
     -webkit-hyphens: auto;
-    -moz-hyphens: auto;
+    -ms-hyphens: auto;
     hyphens: auto;
 }
 
@@ -102,7 +144,7 @@ nav {
     /* Non standard for WebKit */
     word-break: break-word;
     -webkit-hyphens: auto;
-    -moz-hyphens: auto;
+    -ms-hyphens: auto;
     hyphens: auto;
 }
 
@@ -113,9 +155,9 @@ nav {
 }
 
 .genre {
-    float: left;
-    background-color: green;
     color: #fff;
+    font-weight: bolder;
+    float: left;
     border-radius: 1.2rem;
     padding: 5px;
     font-size: 1.2rem;
@@ -123,98 +165,134 @@ nav {
     -moz-user-select: none;     /* Firefox all */
     -ms-user-select: none;      /* IE 10+ */
     user-select: none;          /* Likely future */
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 3px 6px rgba(0,0,0,0.07);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 3px 6px rgba(0,0,0,0.07);
 }
 
 /* Genre colors */
 .alternative {
-    background-color: #880E4F;
+    background-color: rgb(244, 67, 54);
 }
 .blues {
-    background-color: #64B5F6;
+    background-color: rgb(33, 150, 243);
 }
 .classical {
-    background-color: #FFF176;
+    background-color: rgb(233, 30, 99);
 }
 .comedy {
-    background-color: #A1887F;
+    background-color: rgb(141, 110, 99);
 }
 .country {
-    background-color: #FF8A65;
+    background-color: rgb(255, 87, 34);
 }
 .disco {
-    background-color: #F06292;
+    background-color: rgb(186, 104, 200);
 }
 .electronic {
-    background-color: #33691E;
+    background-color: rgb(149, 117, 205);
 }
 .folk {
-    background-color: #90A4AE;
+    background-color: rgb(159, 168, 218);
 }
 .funk {
-    background-color: #9575CD;
+    background-color: rgb(33, 150, 243);
 }
 .hip-hop {
-    background-color: #004D40;
+    background-color: rgb(3, 169, 244);
 }
 .house {
-    background-color: #4DD0E1;
+    background-color: rgb(0, 188, 212);
 }
 .indie {
-    background-color: #1B5E20;
+    background-color: rgb(0, 150, 136);
 }
 .jazz {
-    background-color: #311B92;
+    background-color: rgb(76, 175, 80);
 }
 .metal {
-    background-color: #AED581;
+    background-color: rgb(139, 195, 74);
 }
 .new-wave {
-    background-color: #545D0E;
+    background-color: rgb(205, 220, 57);
 }
 .nu-soul {
-    background-color: #006064;
+    background-color: rgb(255, 235, 59);
 }
 .pop {
-    background-color: #5C6BC0;
+    background-color: rgb(255, 193, 7);
 }
 .psychedelic {
-    background-color: #81C784;
+    background-color: rgb(255, 167, 38);
 }
 .punk {
-    background-color: #A82700;
+    background-color: rgb(255, 112, 67);
 }
 .rock {
-    background-color: #8D6E63;
+    background-color: rgb(229, 115, 115);
 }
-.r&b {
-    background-color: #B39DDB;
-}
+/*.r&b {*/
+/*    background-color: rgb(179, 136, 255);*/
+/*}*/
 .reggae {
-    background-color: #FFCC80;
+    background-color: rgb(255, 229, 127);
 }
 .soul {
-    background-color: #01579B;
+    background-color: rgb(140, 158, 255);
 }
 .spoken-word {
-    background-color: #B0BEC5;
+    background-color: rgb(176, 190, 197);
 }
 .techno {
-    background-color: #28625E;
+    background-color: rgb(128, 216, 255);
 }
 .other {
-    background-color: #81D4FA;
+    background-color: rgb(185, 246, 202);
 }
 
 .addDataButton {
     opacity: 0.7;
+    -webkit-transition: opacity 0.15s ease-out;
+    -o-transition: opacity 0.15s ease-out;
     transition: opacity 0.15s ease-out;
 }
 
 .addBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
     height: 100%;
-    border: 10px dashed #90A4AE;
+    border: 1.2rem dashed #90A4AE;
+}
+
+.cardAdd {
+    padding: 20px;
+    width: 400px;
+    border-color: transparent;
+    background-color: #F8F8F8;
+    border-radius: 2rem;
+    overflow: scroll;
+    -webkit-transition: -webkit-box-shadow 0.25s;
+    transition: -webkit-box-shadow 0.25s;
+    -o-transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+    -webkit-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-box-shadow: 0px 6px 8px -3px rgba(0,0,0,0.25);
+    box-shadow: 0px 6px 8px -3px rgba(0,0,0,0.25);
+}
+
+.cardAdd:hover {
+    -webkit-transition: -webkit-box-shadow 0.25s;
+    transition: -webkit-box-shadow 0.25s;
+    -o-transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+    -webkit-box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
+    box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
 }
 
 .addBox h1 {
@@ -229,22 +307,38 @@ nav {
 
 .addDataButton:hover {
     opacity: 1;
+    -webkit-transition: opacity 0.15s ease-in;
+    -o-transition: opacity 0.15s ease-in;
     transition: opacity 0.15s ease-in;
 }
 
 
 .addRecordsForm {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 10px;
 }
 
 .addRecordsForm form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-top: 100px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     width: 80%;
     max-width: 800px;
@@ -253,29 +347,51 @@ nav {
     border-color: transparent;
     background-color: #F8F8F8;
     border-radius: 2rem;
+    -webkit-box-shadow: 0px 6px 8px -3px rgba(0,0,0,0.25);
     box-shadow: 0px 6px 8px -3px rgba(0,0,0,0.25);
+    -webkit-transition: -webkit-box-shadow 0.25s;
+    transition: -webkit-box-shadow 0.25s;
+    -o-transition: box-shadow 0.25s;
     transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .addRecordsForm form:focus-within {
+    -webkit-transition: -webkit-box-shadow 0.25s;
+    transition: -webkit-box-shadow 0.25s;
+    -o-transition: box-shadow 0.25s;
     transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+    -webkit-box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
     box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
 }
 
 .addRecordsForm form:hover {
+    -webkit-transition: -webkit-box-shadow 0.25s;
+    transition: -webkit-box-shadow 0.25s;
+    -o-transition: box-shadow 0.25s;
     transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+    -webkit-box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
     box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
 }
 
 /* form specific formatting */
 .form-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 10px;
     width: 100%;
 }
 
 .form-group label {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
     flex: none;
     display: block;
     font-weight: bold;
@@ -289,6 +405,8 @@ nav {
 }
 
 .form-group .input-control {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 10px;
     display: block;
@@ -315,6 +433,9 @@ nav {
 
 @media (max-width: 768px) {
     .form-group {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
     .form-group .input-control {
@@ -351,48 +472,70 @@ nav {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #121212;
+         background-color: #121212;
         color: #F5F5F5;
     }
 
     nav {
         background-color: #263238;
+        -webkit-box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
         box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
     }
 
     img {
+        -webkit-filter: brightness(.8) contrast(1.2);
         filter: brightness(.8) contrast(1.2);
     }
 
     .record {
         background-color: rgba(255,255,255,0.05);
+        -webkit-transition: background-color 0.2s;
+        -o-transition: background-color 0.2s;
         transition: background-color 0.2s;
     }
 
     .record:hover {
         background-color: rgba(255,255,255,0.08);
+        -webkit-transition: background-color 0.2s;
+        -o-transition: background-color 0.2s;
         transition: background-color 0.2s;
     }
 
     .addRecordsForm form {
         background-color: rgba(255,255,255,0.05);
+        -webkit-transition: background-color 0.2s, -webkit-box-shadow 0.2s;
+        transition: background-color 0.2s, -webkit-box-shadow 0.2s;
+        -o-transition: box-shadow 0.2s, background-color 0.2s;
         transition: box-shadow 0.2s, background-color 0.2s;
+        transition: box-shadow 0.2s, background-color 0.2s, -webkit-box-shadow 0.2s;
     }
 
     .addRecordsForm form:focus-within {
         background-color: rgba(255,255,255,0.08);
+        -webkit-transition: background-color 0.2s, -webkit-box-shadow 0.2s;
+        transition: background-color 0.2s, -webkit-box-shadow 0.2s;
+        -o-transition: box-shadow 0.2s, background-color 0.2s;
         transition: box-shadow 0.2s, background-color 0.2s;
+        transition: box-shadow 0.2s, background-color 0.2s, -webkit-box-shadow 0.2s;
+        -webkit-box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
         box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
     }
 
     .addRecordsForm form:hover {
         background-color: rgba(255,255,255,0.08);
+        -webkit-transition: background-color 0.2s, -webkit-box-shadow 0.2s;
+        transition: background-color 0.2s, -webkit-box-shadow 0.2s;
+        -o-transition: box-shadow 0.2s, background-color 0.2s;
         transition: box-shadow 0.2s, background-color 0.2s;
+        transition: box-shadow 0.2s, background-color 0.2s, -webkit-box-shadow 0.2s;
+        -webkit-box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
         box-shadow: 0px 10px 12px -3px rgba(0,0,0,0.2);
     }
 
     .genre {
-        color: #F5F5F5;
+        color: #000000;
+        -webkit-filter: saturate(80%);
+        filter: saturate(80%);
     }
 
     .albumName {
@@ -419,23 +562,31 @@ nav {
         color: #000;
         background-color: rgba(255,255,255,0.6);
         border-color: transparent;
+        -webkit-transition: background-color 0.2s;
+        -o-transition: background-color 0.2s;
         transition: background-color 0.2s;
     }
 
 
     .input-control:focus-within {
         background-color: rgba(255,255,255,0.7);
+        -webkit-transition: background-color 0.2s;
+        -o-transition: background-color 0.2s;
         transition: background-color 0.2s;
     }
 
     .requiredField:after {
         content: " *";
         color: #F5F5F5;
+        -webkit-transition: color 0.3s;
+        -o-transition: color 0.3s;
         transition: color 0.3s;
     }
 
     .form-group:focus-within .requiredField:after {
         color: #EF5350;
+        -webkit-transition: color 0.3s;
+        -o-transition: color 0.3s;
         transition: color 0.3s;
     }
 }

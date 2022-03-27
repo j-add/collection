@@ -30,7 +30,7 @@ $formattedRecords = outputRecords($records);
 
 <section class="collectionContainer">
     <?php echo $formattedRecords;?>
-    <div class="record">
+    <div class="cardAdd">
         <a href="./addrecord.php" class="addDataButton">
             <div class="addBox">
                 <svg class="icon--plus" viewBox="-2.5 -2.5 10 10" xmlns="http://www.w3.org/2000/svg">

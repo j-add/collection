@@ -46,9 +46,10 @@ function outputRecords(array $records): string {
         }
         // Output each data field
         $result .= '<div class="record">';
-        $result .= '<div><img class="albumImg" src="' . $checkedImage . '" alt="Album cover for ' . $record['albumName'] . ' by ' . $record['artistName'] . '" /></div>';
-        $result .= '<h1 class="albumName">' . $record['albumName'] . '</h1>';
-        $result .= '<h2 class="artistName">' . $record['artistName'] . '</h2>';
+        $result .= '<div class="cardImage"><img class="albumImg" src="' . $checkedImage . '" alt="Album cover for ' . $record['albumName'] . ' by ' . $record['artistName'] . '" /></div>';
+        $result .= '<div class="cardText"><h1 class="albumName">' . $record['albumName'] . '</h1>';
+        $result .= '<h2 class="artistName">' . $record['artistName'] . '</h2></div>';
+        $result .= '<div class="cardTags">';
         $result .= '<div><span class="genre ' . $record['genre'] . '">' . $record['genre'] . '</span></div>';
         //If purchaseDate is NULL do not include it in output string
         if ($record['purchaseDate'] != NULL) {
@@ -56,7 +57,7 @@ function outputRecords(array $records): string {
             $formattedDate = date( 'd-m-Y', $sqlDate );
             $result .= '<div><span class="purchaseDate">Purchased on: ' . $formattedDate . '</span></div>';
         }
-        $result .= '</div>';
+        $result .= '</div></div>';
     }
     return $result;
 }
