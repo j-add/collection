@@ -2,7 +2,7 @@
 
 Display your record collection, add new records, and share with friends!
 
-![The application shows a record collection in a card layout](CollectorsApp-DarkLight.webp "Preview of Collectors App")
+![The application shows a record collection in a card layout](images/CollectorsApp-DarkLight.webp "Preview of Collectors App")
 ## Description
 A PHP web application for displaying a collection from a MySQL Database.
 
