@@ -8,6 +8,8 @@ A PHP web application for displaying a collection from a MySQL Database.
 
 The  application features both dark and light modes, to suit the users' preferences.
 
+Unit testing in PhpUnit.
+
 ## Project specification
 
 ### Story 1
